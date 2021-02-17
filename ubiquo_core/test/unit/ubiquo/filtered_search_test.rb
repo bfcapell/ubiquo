@@ -37,6 +37,9 @@ class FilteredSearchTest < ActiveSupport::TestCase
       assert_equal [@m.find_by_title('Tíred')], @m.filtered_search({'filter_text' => 'TIred'})
       assert_equal [@m.find_by_description('òuch réally?')], @m.filtered_search({'filter_text' => 'òuch réally?'})
       assert_equal [@m.find_by_description('bah loot')], @m.filtered_search({'filter_text' => 'niña'})
+      assert_equal [@m.find_by_title('Special Symbols')], @m.filtered_search({'filter_text' => 'parenthesis('})
+      assert_equal [@m.find_by_title('Special Symbols')], @m.filtered_search({'filter_text' => 'question?'})
+      assert_equal [@m.find_by_title('Special Symbols')], @m.filtered_search({'filter_text' => 'plus+'})
     end
   end
 
@@ -159,6 +162,11 @@ class FilteredSearchTest < ActiveSupport::TestCase
      },
      { :title => 'Tíred',
        :description => 'stop',
+       :published_at => Date.tomorrow,
+       :private => false
+     },
+     { :title => 'Special Symbols',
+       :description => 'parenthesis(question?plus+',
        :published_at => Date.tomorrow,
        :private => false
      }
