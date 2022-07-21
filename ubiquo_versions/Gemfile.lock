@@ -1,11 +1,11 @@
 GIT
-  remote: https://github.com/gnuine/calendar_date_select
-  revision: 3922e1e477ef41c84b019dce1c1e2678ff8839a1
+  remote: https://github.com/bfcapell/calendar_date_select
+  revision: bad9cfdae0403741335e7b024e9faf66e49097f9
   specs:
     calendar_date_select (1.16.3)
 
 PATH
-  remote: ../
+  remote: ..
   specs:
     ubiquo_core (0.9.0.b1)
       calendar_date_select
@@ -22,7 +22,7 @@ PATH
   remote: .
   specs:
     ubiquo_versions (0.9.0.b1)
-      paper_trail (~> 2.6.3)
+      paper_trail (~> 3.0.0)
       rails (~> 3.2.0)
       ubiquo_core (~> 0.9.0.b1)
 
@@ -90,9 +90,9 @@ GEM
     multi_json (1.6.1)
     mysql2 (0.3.11)
     nanoboy (1.0.0)
-    paper_trail (2.6.4)
-      activerecord (~> 3.0)
-      railties (~> 3.0)
+    paper_trail (3.0.9)
+      activerecord (>= 3.0, < 5.0)
+      activesupport (>= 3.0, < 5.0)
     paperclip (3.4.1)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -143,7 +143,7 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.36)
+    tzinfo (0.3.61)
 
 PLATFORMS
   ruby
