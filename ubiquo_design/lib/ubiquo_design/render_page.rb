@@ -25,13 +25,21 @@ module UbiquoDesign
     def render_page(page)
       cached_widgets = UbiquoDesign.cache_manager.multi_get(page,:scope => self)
 
-      @blocks = page.blocks.collect do |block|
-        block_output = render_block(block.real_block, cached_widgets)
-        # Return if block is void (normally, a redirect ocurred)
-        return unless block_output
-        [block.block_type.to_sym, block_output.join]
-      end.to_hash
-      render_template_file(page.page_template, page.layout)
+      begin
+        @blocks = page.blocks.collect do |block|
+          block_output = render_block(block.real_block, cached_widgets)
+          # Return if block is void (normally, a redirect ocurred)
+          return unless block_output
+          [block.block_type.to_sym, block_output.join]
+        end.to_hash
+        render_template_file(page.page_template, page.layout)
+      rescue ActionView::MissingTemplate
+        if (request.format.in?(Ubiquo::Settings[:ubiquo_design][:rescue_missing_template]) rescue false)
+          raise ActionController::RoutingError.new('Not Found')
+        else
+          raise
+        end
+      end
     end
 
     # Renders all the widgets contained in a block

@@ -45,6 +45,7 @@ Ubiquo::Plugin.register(:ubiquo_design, :plugin => UbiquoDesign) do |config|
     permit?("expiration_management")
   }
   config.add(:public_host, lambda{|options| 'replaceme.com'})
+  config.add :rescue_missing_template, []
 end
 
 groups = Ubiquo::Settings.get :model_groups
