@@ -8,7 +8,7 @@ if @is_media_included != true
     var Media = Class.create({
       initialize: function(){
         this.unique_counter = 0;
-        this.fields = [];
+        this.fields = {};
       },
       //Returns a string that is unique between all fields.
       generate_identifier: function(){

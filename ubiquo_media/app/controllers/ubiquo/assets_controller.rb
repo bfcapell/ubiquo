@@ -73,7 +73,7 @@ class Ubiquo::AssetsController < UbiquoController
           responds_to_parent do
             render :update do |page|
               page << "media_fields.add_element('#{field}',null,#{@asset.id},"+
-                "#{@asset.name.to_s.to_json}, #{counter}, "+
+                "#{@asset.name.to_s.to_json}, #{counter.to_json}, "+
                 "#{thumbnail_url(@asset).to_json},"+
                 "#{view_asset_link(@asset).to_json},null,"+
                 "{advanced_form:#{advanced_asset_form_for(@asset).to_json}});"
