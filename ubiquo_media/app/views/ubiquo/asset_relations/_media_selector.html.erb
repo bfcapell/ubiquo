@@ -19,14 +19,14 @@
   <div class="select-assets">
     <fieldset>
       <legend><%= t('ubiquo.media.media_item_new') %></legend>
-      <div class="add" id="add_<%= counter%>">
+      <div class="add" id="add_<%= counter %>">
       	<%= render :partial => 'ubiquo/asset_relations/asset_form',
               	   :locals => locals %>
       </div>
     </fieldset>
     <fieldset>
       <legend><%= t('ubiquo.media.select_existing_media_item') %></legend>
-      <div class="search-block" id="search_<%= counter%>">
+      <div class="search-block" id="search_<%= counter %>">
        	<%= render :partial => 'ubiquo/asset_relations/asset_search',
                	   :locals => locals %>
       </div>
@@ -56,7 +56,7 @@
       <%= raw ar.id.to_json %>,
       <%= raw ar.asset_id %>,
       <%= raw ar.name.to_json %>,
-      <%= raw counter %>,
+      <%= raw counter.to_json %>,
       <%= raw thumbnail_url(ar.asset).to_json %>,
       <%= raw view_asset_link(ar.asset).to_json %>,
       <%= raw ar.asset.name.to_json %>,
