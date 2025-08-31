@@ -16,7 +16,7 @@ module Ubiquo
         year_range = ((@options[:year_start] || 2000)..(@options[:year_end] || Time.now.year))
         calendar_options = {:popup => true, :year_range => year_range}
         lateral_filter(@options) do |keepable_params|
-          @context.calendar_includes + \
+          @context.calendar_includes.html_safe + \
           @context.content_tag(:div, :id => 'date_filter_content') do
             @context.form_tag(@options[:url_for_options], :method => :get, :id => "frm_calendar") do
               hidden_fields(keepable_params) + \
