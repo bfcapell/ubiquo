@@ -39,9 +39,18 @@ module Ubiquo
           def uhook_load_from_backend!
             return 0 if !overridable?
             regenerate_settings
-            ::UbiquoSetting.all.map do |s|
-              self.context(s.context).add(s)
-            end.compact.length
+            loaded = 0
+            ::UbiquoSetting.all.each do |s|
+              begin
+                self.context(s.context).add(s)
+                loaded += 1
+              rescue Ubiquo::Settings::OptionNotFound => e
+                Rails.logger.warn "[ubiquo_settings] Ignoring stale setting " +
+                                  "#{s.context}.#{s.key} (id=#{s.id}): " +
+                                  "#{e.class} #{e.message}"
+              end
+            end
+            loaded
           end
 
           def uhook_add(name = nil, default_value = nil, options = {}, &block)
