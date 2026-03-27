@@ -1,17 +1,11 @@
 GIT
-  remote: https://github.com/gnuine/calendar_date_select
-  revision: 3922e1e477ef41c84b019dce1c1e2678ff8839a1
+  remote: https://github.com/bfcapell/calendar_date_select
+  revision: bad9cfdae0403741335e7b024e9faf66e49097f9
   specs:
     calendar_date_select (1.16.3)
 
 PATH
-  remote: .
-  specs:
-    ubiquo_authentication (0.9.0.b1)
-      ubiquo_core (~> 0.9.0.b1)
-
-PATH
-  remote: ../
+  remote: ..
   specs:
     ubiquo_core (0.9.0.b1)
       calendar_date_select
@@ -23,6 +17,12 @@ PATH
       rails (~> 3.2.0)
       tinymce-rails
       tinymce-rails-langs
+
+PATH
+  remote: .
+  specs:
+    ubiquo_authentication (0.9.0.b1)
+      ubiquo_core (~> 0.9.0.b1)
 
 GEM
   remote: http://rubygems.org/
@@ -61,6 +61,7 @@ GEM
     cocaine (0.5.1)
       climate_control (>= 0.0.3, < 1.0)
     columnize (0.3.6)
+    concurrent-ruby (1.1.10)
     debugger (1.2.4)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.1.1)
@@ -70,7 +71,8 @@ GEM
     debugger-ruby_core_source (1.1.9)
     erubis (2.7.0)
     hike (1.2.1)
-    i18n (0.6.4)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
     journey (1.0.4)
     jquery-rails (2.0.3)
       railties (>= 3.1.0, < 5.0)
