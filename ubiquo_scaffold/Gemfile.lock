@@ -1,18 +1,11 @@
 GIT
-  remote: https://github.com/gnuine/calendar_date_select
-  revision: 3922e1e477ef41c84b019dce1c1e2678ff8839a1
+  remote: https://github.com/bfcapell/calendar_date_select
+  revision: bad9cfdae0403741335e7b024e9faf66e49097f9
   specs:
     calendar_date_select (1.16.3)
 
 PATH
-  remote: .
-  specs:
-    ubiquo_scaffold (0.9.0.b1)
-      rails (~> 3.2.0)
-      ubiquo_core (~> 0.9.0.b1)
-
-PATH
-  remote: ../
+  remote: ..
   specs:
     ubiquo_core (0.9.0.b1)
       calendar_date_select
@@ -24,6 +17,13 @@ PATH
       rails (~> 3.2.0)
       tinymce-rails
       tinymce-rails-langs
+
+PATH
+  remote: .
+  specs:
+    ubiquo_scaffold (0.9.0.b1)
+      rails (~> 3.2.0)
+      ubiquo_core (~> 0.9.0.b1)
 
 GEM
   remote: http://rubygems.org/
@@ -139,7 +139,7 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.36)
+    tzinfo (0.3.61)
 
 PLATFORMS
   ruby
